@@ -72,10 +72,10 @@ try:
 except FileNotFoundError:
     st.error('Image not found. Please provide a valid file path.')
 
-image_path1 = 'C:/Users/korak/PycharmProjects/spam_detection/sample_plot1.png'
-image_path2 = 'C:/Users/korak/PycharmProjects/spam_detection/sample_plot2.png'
-image_path3 = 'C:/Users/korak/PycharmProjects/spam_detection/download1.png'
-image_path4 = 'C:/Users/korak/PycharmProjects/spam_detection/download2.png'
+image_path1 = 'sample_plot1.png'
+image_path2 = 'sample_plot2.png'
+image_path3 = 'download1.png'
+image_path4 = 'download2.png'
 
 st.write('4) Most Common Spam And Ham Words')
 try:
