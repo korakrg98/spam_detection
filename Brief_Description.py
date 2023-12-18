@@ -4,9 +4,9 @@ import pandas as pd
 import nltk
 nltk.download('punkt')
 import plotly.express as px
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
-import seaborn as sns
+#import seaborn as sns
 #from wordcloud import WordCloud
 import plotly.graph_objects as go
 
