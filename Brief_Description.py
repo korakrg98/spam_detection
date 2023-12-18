@@ -62,7 +62,7 @@ fig4 = px.histogram(df, x='num_sentences', color='target',
 # Update layout and display the plot
 fig4.update_layout(bargap=0.1)
 st.plotly_chart(fig4)
-image_path5 = 'C:/Users/korak/PycharmProjects/spam_detection/download3.png'
+image_path5 = 'download3.png'
 st.write('3) Here we can see the high correlation between the features that imply there is '
          'multicolinerity is present among the features , hence I only use num character feature '
          'as it has the highest correlation with the target column.')
