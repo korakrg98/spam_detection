@@ -1,5 +1,5 @@
 import streamlit as st
-#import numpy as np
+import numpy as np
 import pandas as pd
 import nltk
 nltk.download('punkt')
@@ -8,7 +8,7 @@ import plotly.express as px
 from sklearn.preprocessing import LabelEncoder
 #import seaborn as sns
 #from wordcloud import WordCloud
-import plotly.graph_objects as go
+#import plotly.graph_objects as go
 
 st.set_page_config(
     page_title="Home",
@@ -62,35 +62,15 @@ fig4 = px.histogram(df, x='num_sentences', color='target',
 # Update layout and display the plot
 fig4.update_layout(bargap=0.1)
 st.plotly_chart(fig4)
-
-correlation_matrix = df.corr()
-annotations = []
-for i, row in enumerate(correlation_matrix.values):
-    for j, value in enumerate(row):
-        annotations.append(
-            dict(
-                text=str(round(value, 2)),
-                x=correlation_matrix.columns[j],
-                y=correlation_matrix.index[i],
-                xref='x',
-                yref='y',
-                showarrow=False
-            )
-        )
+image_path5 = 'C:/Users/korak/PycharmProjects/spam_detection/download3.png'
 st.write('3) Here we can see the high correlation between the features that imply there is '
          'multicolinerity is present among the features , hence I only use num character feature '
          'as it has the highest correlation with the target column.')
-# Create heatmap using Plotly
-fig5 = go.Figure(data=go.Heatmap(
-    z=correlation_matrix.values,
-    x=correlation_matrix.columns,
-    y=correlation_matrix.index,
-    colorscale='plotly3',
-    colorbar=dict(title='Correlation'),
-    text=correlation_matrix.round(2).values
-))
-fig5.update_layout(title='Correlation Heatmap', width=600, height=400,annotations=annotations)
-st.plotly_chart(fig5)
+try:
+    with open(image_path5, 'rb') as f:
+        st.image(f.read(), caption='Heat-Map', use_column_width=True)
+except FileNotFoundError:
+    st.error('Image not found. Please provide a valid file path.')
 
 image_path1 = 'C:/Users/korak/PycharmProjects/spam_detection/sample_plot1.png'
 image_path2 = 'C:/Users/korak/PycharmProjects/spam_detection/sample_plot2.png'
