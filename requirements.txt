@@ -4,3 +4,4 @@ streamlit
 scikit-learn
 plotly
 nltk
+nltk.download('punkt')
